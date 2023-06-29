@@ -1,0 +1,27 @@
+<div class="flight-booking-container">
+  <p>Find flights from {{ departure }} to {{ destination }}.</p>
+
+  <div class="date-container">
+    <mat-form-field [formGroup]="dateForm" class="example-full-width">
+      <input
+        matInput
+        [matDatepickerFilter]="myFilter"
+        [matDatepicker]="picker"
+        placeholder="Choose a date"
+        formControlName="date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="example-button-row">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!dateForm.valid"
+      (click)="onSubmit()">
+      Pick Seat
+    </button>
+  </div>
+</div>

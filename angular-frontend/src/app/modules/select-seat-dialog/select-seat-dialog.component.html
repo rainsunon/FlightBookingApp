@@ -1,0 +1,68 @@
+<div class="seat-select-container">
+  <div class="title-container">
+    <p>Select Seat</p>
+  </div>
+
+  <div *ngIf="data.seats.length > 0;else noSeats">
+    <div class="seat-form-container">
+      <mat-form-field [formGroup]="seatForm">
+        <mat-label>Seat Class</mat-label>
+        <mat-select disableRipple formControlName="seatClass">
+          <mat-option *ngFor="let seatClass of seatClasses" [value]="seatClass"
+            >{{ seatClass }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field [formGroup]="seatForm">
+        <mat-label>Aisle</mat-label>
+        <mat-select disableRipple formControlName="aisle">
+          <div *ngFor="let seat of data.seats">
+            <mat-option
+              *ngIf="(seat.seatClass === seatForm.value.seatClass)"
+              [value]="seat.aisle"
+              >{{ seat.aisle }}</mat-option
+            >
+          </div>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field [formGroup]="seatForm">
+        <mat-label>Row</mat-label>
+        <mat-select disableRipple formControlName="row">
+          <div *ngFor="let seat of data.seats">
+            <mat-option
+              *ngIf="(seat.seatClass === seatForm.value.seatClass && seat.aisle === seatForm.value.aisle)"
+              [value]="seat.row"
+              (click)="getSeat()"
+              >{{ seat.row }}</mat-option
+            >
+          </div>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div
+      *ngIf="(seatForm.value.seatClass && seatForm.value.aisle && seatForm.value.row)"
+      class="confirm-container">
+      <p>Price: {{ selectedSeat.price }}</p>
+      <div class="example-button-row">
+        <button mat-raised-button color="primary" (click)="onCancel()">
+          Cancel
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!seatForm.valid"
+          (click)="onSubmit()">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noSeats>
+    <p>No more seats available on this date.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,33 @@
+.flight-booking-container {
+  padding-top: 250px;
+  width: 100%;
+  text-align: center;
+}
+
+.flight-booking-container p {
+  font-size: 1.25rem;
+}
+
+.date-container {
+  padding-top: 15px;
+  margin: auto;
+  margin-top: 30px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.date-container mat-form-field {
+  width: 350px;
+}
+
+.example-button-row {
+  margin-top: 40px;
+}
+
+.example-button-row button {
+  height: 50px;
+  width: 400px;
+  max-width: 70%;
+  font-size: 1rem;
+}

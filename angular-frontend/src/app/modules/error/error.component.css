@@ -1,0 +1,9 @@
+.error-container {
+  padding-top: 250px;
+  width: 100%;
+  text-align: center;
+}
+
+.error-container p {
+  font-size: 1.5rem;
+}

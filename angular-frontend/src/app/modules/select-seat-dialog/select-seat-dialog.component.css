@@ -1,0 +1,45 @@
+
+.seat-select-container {
+  padding-top: 30px;
+  height: 70vh;
+}
+
+.title-container {
+  margin-left: 50px;
+}
+
+.title-container p {
+  font-size: 1.5rem;
+}
+
+.seat-form-container {
+  margin: auto;
+  width: 85%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.confirm-container {
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.confirm-container p {
+  font-size: 1.2rem;
+}
+
+.example-button-row {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.example-button-row button {
+  height: 50px;
+  width: 180px;
+  max-width: 70%;
+  font-size: 1rem;
+}

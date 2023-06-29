@@ -1,0 +1,14 @@
+.confirmation-container {
+  padding-top: 250px;
+  width: 100%;
+  text-align: center;
+}
+
+.confirmation-title {
+  font-size: 1.5rem;
+}
+
+.confirmation-text {
+  margin-top: 30px;
+  font-size: 1rem;
+}

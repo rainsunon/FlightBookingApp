@@ -1,0 +1,40 @@
+<div class="search-container">
+  <div class="search-title">
+    <p>Search Flights:</p>
+  </div>
+
+  <div class="form-container">
+    <mat-form-field [formGroup]="flightForm">
+      <mat-label>Select Departure</mat-label>
+      <mat-select disableRipple formControlName="departure">
+        <mat-option *ngFor="let departure of departures" [value]="departure"
+          >{{ departure }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field [formGroup]="flightForm">
+      <mat-label>Select Destination</mat-label>
+      <mat-select disableRipple formControlName="destination">
+        <mat-option
+          *ngFor="let destination of destinations"
+          [value]="destination"
+          >{{ destination }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <section>
+    <div class="example-button-row">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!flightForm.valid"
+        (click)="onSubmit()">
+        Find Flights
+      </button>
+    </div>
+  </section>
+</div>

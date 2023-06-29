@@ -1,0 +1,40 @@
+.search-container {
+  padding-top: 250px;
+  width: 100%;
+  text-align: center;
+}
+
+.search-title {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  text-align: left;
+  margin: auto;
+  width: 70%;
+}
+
+.form-container {
+  padding-top: 15px;
+  margin: auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container mat-form-field {
+  width: 48%;
+}
+
+.example-button-row {
+  margin-top: 40px;
+}
+
+.example-button-row button {
+  height: 50px;
+  width: 400px;
+  max-width: 70%;
+  font-size: 1rem;
+  /*
+  background-color: darkorange;
+  color: black;
+   */
+}
